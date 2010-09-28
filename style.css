@@ -28,6 +28,11 @@ h1 {
   font-size: 125%;
   margin: 1em 0 0;
 }
+#repositories h2 span {
+  color: #bbb;
+  font-size: 80%;
+  margin-left: 0.5em;
+}
 #repositories blockquote {
   border-left: 4px   solid #eee;
   margin: 3px 10px;

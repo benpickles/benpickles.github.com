@@ -5,13 +5,17 @@ var RepositoryTemplate = {
     elem.find("a")
       .attr("href", repository.attr("homepage"))
       .text(repository.attr("name"))
+      .after($("<span>", {
+        text: repository.attr("watchers") + " watchers, " +
+              repository.attr("forks") + " forks"
+      }))
 
     elem
       .append($("<blockquote>", { text: repository.attr("description") }))
       .append(
         $("<p>Source: <a></a></p>").find("a")
           .attr("href", repository.attr("url"))
-          .text(repository.attr("url"))
+          .text(repository.attr("url").replace("http://", ""))
         .end()
       )
 
