@@ -25,21 +25,13 @@ _gaq.push(['_trackPageview']);
 <h1>benpickles.github.com</h1>
 
 <ul id="repositories">
-    <li id="js-model">
-      <h2><a href="http://benpickles.github.com/js-model/">js-model</a></h2>
-      <blockquote>Work with models in your JavaScript</blockquote>
-      <p>Source: <a href="http://github.com/benpickles/js-model">github.com/benpickles/js-model</a></p>
+  <%- @repositories.each do |repository| -%>
+    <li id="<%= repository.name %>">
+      <h2><a href="<%=h repository.homepage %>"><%=h repository.name %></a></h2>
+      <blockquote><%=h repository.description %></blockquote>
+      <p>Source: <a href="<%=h repository.url %>"><%=h repository.url.sub('http://', '') %></a></p>
     </li>
-    <li id="peity">
-      <h2><a href="http://benpickles.github.com/peity/">peity</a></h2>
-      <blockquote>Progressive &lt;canvas&gt; bar, line and pie charts</blockquote>
-      <p>Source: <a href="http://github.com/benpickles/peity">github.com/benpickles/peity</a></p>
-    </li>
-    <li id="fewer">
-      <h2><a href="http://rubygems.org/gems/fewer">fewer</a></h2>
-      <blockquote>Fewer is a Rack endpoint to bundle and cache assets and help you make fewer HTTP requests.</blockquote>
-      <p>Source: <a href="http://github.com/benpickles/fewer">github.com/benpickles/fewer</a></p>
-    </li>
+  <%- end -%>
 </ul>
 
 <footer>
