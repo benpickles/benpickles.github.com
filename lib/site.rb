@@ -9,7 +9,7 @@ class Site
       response = HTTParty.get('http://github.com/api/v1/json/benpickles')
 
       @repositories = response['user']['repositories'].select { |hash|
-        %w(fewer js-model peity).include?(hash['name'])
+        %w(fewer js-model onScreen peity wapper).include?(hash['name'])
       }.map { |hash|
         Repository.new(hash)
       }.sort_by { |repository|
